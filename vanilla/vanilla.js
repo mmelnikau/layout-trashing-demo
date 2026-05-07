@@ -13,7 +13,7 @@ const colors = [
     'purple'
 ]
 
-for (let i = 0; i < STARS_COUNT; i++) {
+function createStar() {
     const star = document.createElement('span')
 
     // position
@@ -29,12 +29,20 @@ for (let i = 0; i < STARS_COUNT; i++) {
         star.style.left = `${Math.random() * window.innerWidth}px`
     }
 
-    star.style.animationDuration = `${1 + Math.random() * 3}s`
-    star.style.animationDelay = `${Math.random() * 5}s`
+    const duration = 2 + Math.random() * 3
+    star.style.animationDuration = `${duration}s`
+
+    star.style.animationDelay = `0s`
 
     const randomColor =
         colors[Math.floor(Math.random() * colors.length)]
     star.classList.add(randomColor)
 
     starsContainer.appendChild(star)
+
+    setTimeout(() => {
+        star.remove()
+    }, duration * 1000)
 }
+
+setInterval(createStar, 150)
