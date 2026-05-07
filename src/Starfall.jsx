@@ -1,15 +1,5 @@
 import { useEffect, useRef } from 'react'
-
-const colors = [
-    'white',
-    'silver',
-    'blue',
-    'pink',
-    'green',
-    'yellow',
-    'orange',
-    'purple',
-]
+import {createStart} from "./shared/createStart.js";
 
 export default function Starfall() {
     const starsRef = useRef(null)
@@ -17,37 +7,16 @@ export default function Starfall() {
     useEffect(() => {
         let timeoutId
 
-        function createStar() {
+        function _createStar() {
             const container = starsRef.current
-            if (!container) return
-
-            const star = document.createElement('span')
-
-            const top = Math.random() * window.innerHeight
-            star.style.top = `${top - 300}px`
-            if (top > window.innerHeight * 0.7) {
-                star.style.left =
-                    `${window.innerWidth * 0.8 + Math.random() * window.innerWidth * 0.2}px`
-            } else {
-                star.style.left = `${Math.random() * window.innerWidth}px`
+            if (!container) {
+                return
             }
-
-            const duration = 2 + Math.random() * 3
-            star.style.animationDuration = `${duration}s`
-
-            const color = colors[Math.floor(Math.random() * colors.length)]
-            star.classList.add(color)
-
-            container.appendChild(star)
-
-            star.addEventListener('animationend', () => {
-                star.remove()
-            })
+            createStart(container);
         }
 
         function loop() {
-            createStar()
-
+            _createStar()
             const next = 80 + Math.random() * 220
             timeoutId = setTimeout(loop, next)
         }
