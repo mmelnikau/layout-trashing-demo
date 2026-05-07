@@ -36,8 +36,8 @@ div.space-container span {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
-    0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.1);
-    /*animation: starfall 3s linear infinite;*/
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.1);
     animation-name: starfall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -65,4 +65,104 @@ div.space-container span::before {
         transform: rotate(315deg) translateX(-1000px);
         opacity: 0;
     }
+}
+
+/* ==== Colors === */
+
+.space-container span.white {
+    background: #ffffff;
+
+    box-shadow:
+            0 0 0 4px rgba(255, 255, 255, 0.1),
+            0 0 0 8px rgba(255, 255, 255, 0.1),
+            0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.space-container span.white::before {
+    background: linear-gradient(90deg, #ffffff, transparent);
+}
+
+.space-container span.silver {
+    background: #cfd8dc;
+
+    box-shadow:
+            0 0 0 4px rgba(207, 216, 220, 0.1),
+            0 0 0 8px rgba(207, 216, 220, 0.1),
+            0 0 20px rgba(207, 216, 220, 0.1);
+}
+
+.space-container span.silver::before {
+    background: linear-gradient(90deg, #cfd8dc, transparent);
+}
+
+.space-container span.blue {
+    background: #66d9ff;
+    box-shadow:
+            0 0 0 4px rgba(102, 217, 255, 0.1),
+            0 0 0 8px rgba(102, 217, 255, 0.1),
+            0 0 20px rgba(102, 217, 255, 1);
+}
+
+.space-container span.blue::before {
+    background: linear-gradient(90deg, #66d9ff, transparent);
+}
+
+.space-container span.pink {
+    background: #ff66d9;
+    box-shadow:
+            0 0 0 4px rgba(255, 102, 217, 0.1),
+            0 0 0 8px rgba(255, 102, 217, 0.1),
+            0 0 20px rgba(255, 102, 217, 0.1);
+}
+
+.space-container span.pink::before {
+    background: linear-gradient(90deg, #ff66d9, transparent);
+}
+
+.space-container span.green {
+    background: #66ff99;
+    box-shadow:
+            0 0 0 4px rgba(102, 255, 153, 0.1),
+            0 0 0 8px rgba(102, 255, 153, 0.1),
+            0 0 20px rgba(102, 255, 153, 1);
+}
+
+.space-container span.green::before {
+    background: linear-gradient(90deg, #66ff99, transparent);
+}
+
+.space-container span.yellow {
+    background: #ffe066;
+    box-shadow:
+            0 0 0 4px rgba(255, 224, 102, 0.1),
+            0 0 0 8px rgba(255, 224, 102, 0.1),
+            0 0 20px rgba(255, 224, 102, 1);
+}
+
+.space-container span.yellow::before {
+    background: linear-gradient(90deg, #ffe066, transparent);
+}
+
+.space-container span.orange {
+    background: #ff9966;
+    box-shadow:
+            0 0 0 4px rgba(255, 153, 102, 0.1),
+            0 0 0 8px rgba(255, 153, 102, 0.1),
+            0 0 20px rgba(255, 153, 102, 1);
+}
+
+.space-container span.orange::before {
+    background: linear-gradient(90deg, #ff9966, transparent);
+}
+
+.space-container span.purple {
+    background: #cc99ff;
+    box-shadow:
+            0 0 0 4px rgba(204, 153, 255, 0.1),
+            0 0 0 8px rgba(204, 153, 255, 0.1),
+            0 0 20px rgba(204, 153, 255, 1);
+}
+
+.space-container span.purple::before {
+    background: linear-gradient(90deg, #cc99ff, transparent);
 }
