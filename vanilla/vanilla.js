@@ -14,7 +14,6 @@ const colors = [
 function createStar() {
     const star = document.createElement('span')
 
-    // position
     const top = Math.random() * window.innerHeight
     star.style.top = `${top - 300}px`
     if (top > window.innerHeight * 0.7) {
