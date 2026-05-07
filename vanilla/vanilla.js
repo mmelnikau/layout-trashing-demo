@@ -1,7 +1,5 @@
 const starsContainer = document.getElementById('stars')
 
-const STARS_COUNT = 40
-
 const colors = [
     'white',
     'silver',
@@ -17,11 +15,8 @@ function createStar() {
     const star = document.createElement('span')
 
     // position
-    // star.style.top = `${Math.random() * window.innerHeight}px`
-    // star.style.left = `${Math.random() * window.innerWidth}px`
-
     const top = Math.random() * window.innerHeight
-    star.style.top = `${top}px`
+    star.style.top = `${top - 300}px`
     if (top > window.innerHeight * 0.7) {
         star.style.left =
             `${window.innerWidth * 0.8 + Math.random() * window.innerWidth * 0.2}px`
