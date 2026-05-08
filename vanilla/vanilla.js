@@ -1,10 +1,14 @@
-import {createStar, createStarAndRemove, showHiddenStar} from "../src/shared/createStart.js";
+import {
+  createStar,
+  createStarAndRemove,
+  showHiddenStar,
+} from "../src/shared/createStart.js";
 
-const starsContainer = document.getElementById('stars')
+const starsContainer = document.getElementById("stars");
 
 /* --- Initial --- */
 
-setInterval(() => createStarAndRemove(starsContainer), 150)
+setInterval(() => createStarAndRemove(starsContainer), 150);
 
 /* --- With layout trashing --- */
 
