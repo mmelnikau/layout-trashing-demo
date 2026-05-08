@@ -9,30 +9,61 @@ const colors = [
     'purple'
 ]
 
-export function createStart(starsContainer) {
+
+export function createStarAndRemove(starsContainer) {
     const star = document.createElement('span')
+    const duration = applyStyles(star);
+    starsContainer.appendChild(star);
+    setTimeout(() => {
+        star.remove();
+    }, duration * 1000);
+    return star;
+}
 
-    const top = Math.random() * window.innerHeight
-    star.style.top = `${top - 300}px`
-    if (top > window.innerHeight * 0.7) {
-        star.style.left =
-            `${window.innerWidth * 0.8 + Math.random() * window.innerWidth * 0.2}px`
+export function createStar(starsContainer) {
+    const star = document.createElement('span')
+    const duration = applyStyles(star);
+    starsContainer.appendChild(star);
+    setTimeout(() => {
+        star.style.display = 'none';
+    }, duration * 1000);
+    return star;
+}
+
+export function showHiddenStar(star) {
+    const duration = applyStyles(star);
+    star.style.display = 'block';
+    setTimeout(() => {
+        star.style.display = 'none';
+    }, duration * 1000);
+}
+
+function randomCenterBiased() {
+    return Math.min(
+        1,
+        Math.max(
+            0,
+            0.7 + (Math.random() - Math.random()) * 0.95
+        )
+    )
+}
+
+function applyStyles(star) {
+    const width = window.innerWidth
+    const height = window.innerHeight
+    const spawnPadding = 300
+    const fromRight = Math.random() < 0.5
+    if (fromRight) {
+        star.style.left = `${width + Math.random() * spawnPadding}px`
+        star.style.top = `${randomCenterBiased() * height}px`
+        // star.style.top = `${Math.random() * height}px`
     } else {
-        star.style.left = `${Math.random() * window.innerWidth}px`
+        // star.style.left = `${Math.random() * width}px`
+        star.style.left = `${randomCenterBiased() * width}px`
+        star.style.top = `${-spawnPadding + Math.random() * spawnPadding}px`
     }
-
     const duration = 2 + Math.random() * 3
     star.style.animationDuration = `${duration}s`
-
-    star.style.animationDelay = `0s`
-
-    const randomColor =
-        colors[Math.floor(Math.random() * colors.length)]
-    star.classList.add(randomColor)
-
-    starsContainer.appendChild(star)
-
-    setTimeout(() => {
-        star.remove()
-    }, duration * 1000)
+    star.className = colors[Math.floor(Math.random() * colors.length)]
+    return duration;
 }

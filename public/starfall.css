@@ -41,6 +41,7 @@ div.space-container span {
     animation-name: starfall;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-delay: 0s;
 }
 
 div.space-container span::before {
