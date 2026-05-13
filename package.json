@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "demo": "vite --host 127.0.0.1 --port 5173 --open /layout-trashing-demo/",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
     "lint": "eslint ."
