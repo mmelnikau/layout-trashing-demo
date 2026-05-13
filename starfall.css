@@ -1,168 +1,170 @@
 div.space-container {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    pointer-events: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 div.space-container * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 div.space-container section {
-    width: 100%;
-    height: 100%;
-    animation: spaceZoom 50s linear infinite;
+  width: 100%;
+  height: 100%;
+  animation: spaceZoom 50s linear infinite;
 }
 
 @keyframes spaceZoom {
-    0%,
-    100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 div.space-container span {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.1),
     0 0 0 8px rgba(255, 255, 255, 0.1),
     0 0 20px rgba(255, 255, 255, 0.1);
-    animation-name: starfall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  animation-name: starfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
 }
 
 div.space-container span::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 1px;
-    background: linear-gradient(90deg, #fff, transparent);
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
 }
 
 @keyframes starfall {
-    0% {
-        transform: rotate(315deg) translateX(0);
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(315deg) translateX(-1000px);
-        opacity: 0;
-    }
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
 }
 
 /* ==== Colors === */
 
 .space-container span.white {
-    background: #ffffff;
+  background: #ffffff;
 
-    box-shadow:
-            0 0 0 4px rgba(255, 255, 255, 0.1),
-            0 0 0 8px rgba(255, 255, 255, 0.1),
-            0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .space-container span.white::before {
-    background: linear-gradient(90deg, #ffffff, transparent);
+  background: linear-gradient(90deg, #ffffff, transparent);
 }
 
 .space-container span.silver {
-    background: #cfd8dc;
+  background: #cfd8dc;
 
-    box-shadow:
-            0 0 0 4px rgba(207, 216, 220, 0.1),
-            0 0 0 8px rgba(207, 216, 220, 0.1),
-            0 0 20px rgba(207, 216, 220, 0.1);
+  box-shadow:
+    0 0 0 4px rgba(207, 216, 220, 0.1),
+    0 0 0 8px rgba(207, 216, 220, 0.1),
+    0 0 20px rgba(207, 216, 220, 0.1);
 }
 
 .space-container span.silver::before {
-    background: linear-gradient(90deg, #cfd8dc, transparent);
+  background: linear-gradient(90deg, #cfd8dc, transparent);
 }
 
 .space-container span.blue {
-    background: #66d9ff;
-    box-shadow:
-            0 0 0 4px rgba(102, 217, 255, 0.1),
-            0 0 0 8px rgba(102, 217, 255, 0.1),
-            0 0 20px rgba(102, 217, 255, 1);
+  background: #66d9ff;
+  box-shadow:
+    0 0 0 4px rgba(102, 217, 255, 0.1),
+    0 0 0 8px rgba(102, 217, 255, 0.1),
+    0 0 20px rgba(102, 217, 255, 1);
 }
 
 .space-container span.blue::before {
-    background: linear-gradient(90deg, #66d9ff, transparent);
+  background: linear-gradient(90deg, #66d9ff, transparent);
 }
 
 .space-container span.pink {
-    background: #ff66d9;
-    box-shadow:
-            0 0 0 4px rgba(255, 102, 217, 0.1),
-            0 0 0 8px rgba(255, 102, 217, 0.1),
-            0 0 20px rgba(255, 102, 217, 0.1);
+  background: #ff66d9;
+  box-shadow:
+    0 0 0 4px rgba(255, 102, 217, 0.1),
+    0 0 0 8px rgba(255, 102, 217, 0.1),
+    0 0 20px rgba(255, 102, 217, 0.1);
 }
 
 .space-container span.pink::before {
-    background: linear-gradient(90deg, #ff66d9, transparent);
+  background: linear-gradient(90deg, #ff66d9, transparent);
 }
 
 .space-container span.green {
-    background: #66ff99;
-    box-shadow:
-            0 0 0 4px rgba(102, 255, 153, 0.1),
-            0 0 0 8px rgba(102, 255, 153, 0.1),
-            0 0 20px rgba(102, 255, 153, 1);
+  background: #66ff99;
+  box-shadow:
+    0 0 0 4px rgba(102, 255, 153, 0.1),
+    0 0 0 8px rgba(102, 255, 153, 0.1),
+    0 0 20px rgba(102, 255, 153, 1);
 }
 
 .space-container span.green::before {
-    background: linear-gradient(90deg, #66ff99, transparent);
+  background: linear-gradient(90deg, #66ff99, transparent);
 }
 
 .space-container span.yellow {
-    background: #ffe066;
-    box-shadow:
-            0 0 0 4px rgba(255, 224, 102, 0.1),
-            0 0 0 8px rgba(255, 224, 102, 0.1),
-            0 0 20px rgba(255, 224, 102, 1);
+  background: #ffe066;
+  box-shadow:
+    0 0 0 4px rgba(255, 224, 102, 0.1),
+    0 0 0 8px rgba(255, 224, 102, 0.1),
+    0 0 20px rgba(255, 224, 102, 1);
 }
 
 .space-container span.yellow::before {
-    background: linear-gradient(90deg, #ffe066, transparent);
+  background: linear-gradient(90deg, #ffe066, transparent);
 }
 
 .space-container span.orange {
-    background: #ff9966;
-    box-shadow:
-            0 0 0 4px rgba(255, 153, 102, 0.1),
-            0 0 0 8px rgba(255, 153, 102, 0.1),
-            0 0 20px rgba(255, 153, 102, 1);
+  background: #ff9966;
+  box-shadow:
+    0 0 0 4px rgba(255, 153, 102, 0.1),
+    0 0 0 8px rgba(255, 153, 102, 0.1),
+    0 0 20px rgba(255, 153, 102, 1);
 }
 
 .space-container span.orange::before {
-    background: linear-gradient(90deg, #ff9966, transparent);
+  background: linear-gradient(90deg, #ff9966, transparent);
 }
 
 .space-container span.purple {
-    background: #cc99ff;
-    box-shadow:
-            0 0 0 4px rgba(204, 153, 255, 0.1),
-            0 0 0 8px rgba(204, 153, 255, 0.1),
-            0 0 20px rgba(204, 153, 255, 1);
+  background: #cc99ff;
+  box-shadow:
+    0 0 0 4px rgba(204, 153, 255, 0.1),
+    0 0 0 8px rgba(204, 153, 255, 0.1),
+    0 0 20px rgba(204, 153, 255, 1);
 }
 
 .space-container span.purple::before {
-    background: linear-gradient(90deg, #cc99ff, transparent);
+  background: linear-gradient(90deg, #cc99ff, transparent);
 }
