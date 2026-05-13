@@ -1,8 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createStarAndRemove } from "./shared/createStart.js";
+
+// rendering pressure
+// paint pressure
+// DOM churn
+
 
 export default function Starfall() {
   const starsRef = useRef(null);
+  // const [layoutReads, setLayoutReads] = useState(0);
+  // const [containerWidth, setContainerWidth] = useState(0);
 
   useEffect(() => {
     let timeoutId;
@@ -13,11 +20,16 @@ export default function Starfall() {
         return;
       }
       createStarAndRemove(container);
+
+      // const rect = container.getBoundingClientRect();
+      // setContainerWidth(rect.width);
+      // setLayoutReads((value) => value + 1);
     }
 
     function loop() {
       _createStar();
       const next = 80 + Math.random() * 220;
+      // const next = 30 + Math.random() * 80;
       timeoutId = setTimeout(loop, next);
     }
 
@@ -36,6 +48,11 @@ export default function Starfall() {
   return (
     <div className="space-container">
       <section ref={starsRef} />
+
+      {/*<div className="debug-panel">*/}
+      {/*  <div>Layout reads: {layoutReads}</div>*/}
+      {/*  <div>Container width: {Math.round(containerWidth)}px</div>*/}
+      {/*</div>*/}
     </div>
   );
 }
