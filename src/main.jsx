@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Starfall from "./Starfall.jsx";
+import VirtualList from "./VirtualList.jsx";
+// <VirtualList />
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
